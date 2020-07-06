@@ -1,0 +1,12 @@
+{% extends "toolbase.html" %}
+{% block title %}設定メニュー{% endblock %}
+
+{% block inner_content %}
+<div class="container">
+	<button onclick="location.href='/'" type="button" class="btn btn-secondary mb-4 pr-3 pl-3">戻る</button>
+	<div class="container row justify-content-center p-3">
+		<button onclick="location.href='/nameList'" type="button" class="btn btn-outline-dark btn-block p-5 mb-4 w-75"><h2>参加者リスト</h2></button>
+		<button onclick="location.href='/talkList'" type="button" class="btn btn-outline-dark btn-block p-5 mb-4 w-75"><h2>サイコロお題リスト</h2></button>
+	</div>
+</div>
+{% endblock %}

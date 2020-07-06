@@ -1,0 +1,41 @@
+{% extends "toolbase.html" %}
+{% block title %}参加者リスト{% endblock %}
+{% block inner_content %}
+
+<div class="container">
+	<button onclick="location.href='/settings'" type="button" class="btn btn-secondary mb-4 pr-3 pl-3">戻る</button>
+	<h1>参加者リスト</h1>
+	<table class="table">
+		<thead class="thead-light text-center">
+			<tr>
+				<th class="col-8">名前</th>
+				<th class="col-4">操作</th>
+			</tr>
+		</thead>
+		{% for user in users %}
+		<tr>
+			<td>{{ user }}</td>
+			<td>
+				<form action="/nameList" style="display: inline" method="post">
+					<button class="btn btn-danger" type="submit" name="userName" value={{user}}>削除</button>
+					<input type="hidden" name="command" value="del">
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+<div class="container">
+	<form action="/nameList" style="display: inline" method="post">
+		<div class="form-row justify-content-center">
+			<div class="col-auto">
+				<input type="text" class="form-control" name="userName">
+			</div>
+			<div class="col-auto">
+				<button class="btn btn-primary" type="submit" name="command" value="add">追加</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "toolbase.html" %}
+{% block title %}順番決め{% endblock %}
+{% block inner_content %}
+
+<div class="container">
+	<button onclick="location.href='/'" type="button" class="btn btn-secondary mb-4 pr-3 pl-3">戻る</button>
+	<h1>順番決め</h1>
+	<table class="table">
+		<thead class="thead-light text-center">
+			<tr class="d-flex">
+				<th class="col-2">番号</th>
+				<th class="col-10">名前</th>
+			</tr>
+		</thead>
+		{% for user in users %}
+		<tr class="d-flex text-center">
+			<td class="col-2">{{ loop.index }}</td>
+			<td class="col-10">{{ user }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "toolbase.html" %}
+{% block title %}サイコロお題リスト{% endblock %}
+{% block inner_content %}
+
+<div class="container">
+	<button onclick="location.href='/settings'" type="button" class="btn btn-secondary mb-4 pr-3 pl-3">戻る</button>
+	<h1>サイコロお題リスト</h1>
+	<table class="table">
+		<thead class="thead-light text-center">
+			<tr>
+				<th class="col-8">お題</th>
+				<th class="col-4">操作</th>
+			</tr>
+		</thead>
+		{% for talk in talks %}
+		<tr>
+			<td>{{ talk }}</td>
+			<td>
+				<form action="/talkList" style="display: inline" method="post">
+					<button class="btn btn-danger" type="submit" name="theme" value={{talk}}>削除</button>
+					<input type="hidden" name="command" value="del">
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+<div class="container">
+	<form action="/talkList" style="display: inline" method="post">
+		<div class="form-row justify-content-center">
+			<div class="col-auto">
+				<input type="text" class="form-control" name="theme">
+			</div>
+			<div class="col-auto">
+				<button class="btn btn-primary" type="submit" name="command" value="add">追加</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}

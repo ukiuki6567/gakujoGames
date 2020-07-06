@@ -1,0 +1,10 @@
+{% extends "toolbase.html" %}
+
+{% block inner_content %}
+<div class="container row justify-content-center p-3">
+	<i class="fas fa-dice"></i>
+	<button onclick="location.href='/dice'" type="button" class="btn btn-outline-dark btn-block p-5 mb-4 w-75"><h2>サイコロトーク</h2></button>
+	<button onclick="location.href='/order'" type="button" class="btn btn-outline-dark btn-block p-5 mb-4 w-75"><h2>順番決め</h2></button>
+	<button onclick="location.href='/settings'" type="button" class="btn btn-outline-dark btn-block p-5 mb-4 w-75"><h2>設定</h2></button>
+</div>
+{% endblock %}
