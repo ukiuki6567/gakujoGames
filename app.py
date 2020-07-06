@@ -75,4 +75,4 @@ if __name__ == "__main__":
 	if not talkFile.exists():
 		talkFile.touch()
 
-	app.run(debug=True)
+	app.run(debug=False, host='0.0.0.0', port=80)
